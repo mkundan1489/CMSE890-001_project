@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from tensorflow.keras.models import load_model
+
 
 data = pd.read_csv("aaplCombined.csv")
 # Calculate the 5-day moving average
@@ -9,6 +11,8 @@ data = data.dropna()
 train_data = data[:1513]
 test_data = data[1513:]
 
+
+model = load_model('/mnt/home/mahaseth/CMSEProj/my_model.h5')
 
 # Initialize the cash and stock holdings
 cash_held = 10000

@@ -1,5 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
+data = pd.read_csv("aaplCombined.csv")
+# Calculate the 5-day moving average
+data['5-day MA'] = data['Close'].rolling(window=5).mean()
+data = data.dropna()
+# Split the data into training and test sets
+train_data = data[:1513]
+test_data = data[1513:]
+
+
 # Initialize the cash and stock holdings
 cash_held = 10000
 stocks_held = 25

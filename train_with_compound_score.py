@@ -23,6 +23,8 @@ epsilon_min = 0.01
 epsilon_decay = 0.995
 learning_rate = 0.001
 update_target_network = 100
+# Define the number of episodes
+num_episodes = 50
 
 # Define the deep neural network model
 model2 = keras.models.Sequential([
@@ -81,9 +83,6 @@ remaining_cash = 10000 - data['Open'][0] * stocks_held
 
 # Initialize exploration rate
 exploration_rate = epsilon
-
-# Define the number of episodes
-num_episodes = 50
 
 # Iterate through each episode
 for episode in range(num_episodes):
